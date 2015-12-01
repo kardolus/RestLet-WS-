@@ -35,7 +35,7 @@ public class FileParserTest {
     }
     
     @After
-    public void tearDown() {
+    public void tearDown() { 
     }
 
     /**
