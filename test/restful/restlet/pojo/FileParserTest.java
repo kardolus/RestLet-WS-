@@ -18,6 +18,8 @@ import static org.junit.Assert.*;
  * @author misterclipping
  */
 public class FileParserTest {
+    FileParser instance = null;
+    Scientists sc = null;
     
     public FileParserTest() {
     }
@@ -32,6 +34,8 @@ public class FileParserTest {
     
     @Before
     public void setUp() {
+        instance = new FileParser();
+        sc = new Scientists();
     }
     
     @After
@@ -44,17 +48,12 @@ public class FileParserTest {
     @Test
     public void testParse() {
         System.out.println("testing parse");
-        FileParser instance = new FileParser();
         instance.parse();
-        Scientists sc = new Scientists();
         if(Scientists.getScientistList().isEmpty()){
             fail("Unable to parse database file");
         }
         assertEquals(countLines(), Scientists.getScientistList().size()); // all lines parsed
         System.out.println(sc.toString());
-        
-        // TODO review the generated test code and remove the default call to fail.
-   
     }
     
     private int countLines() {
