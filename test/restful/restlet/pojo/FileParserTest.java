@@ -52,7 +52,8 @@ public class FileParserTest {
         if(Scientists.getScientistList().isEmpty()){
             fail("Unable to parse database file");
         }
-        assertEquals(countLines(), Scientists.getScientistList().size()); // all lines parsed
+        // all lines should be parsed
+        assertEquals(countLines(), Scientists.getScientistList().size()); 
         System.out.println(sc.toString());
     }
     
