@@ -1,7 +1,5 @@
 package restful.restlet.pojo;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.restlet.Component;
@@ -12,10 +10,6 @@ import org.restlet.data.Protocol;
  * This POJO publishes a Restlet Web Service
  */
 public class RestfulRestletPOJO {
-
-    static{
-        new FileParser().parse();
-    }
     
     /**
      * @param args the command line arguments

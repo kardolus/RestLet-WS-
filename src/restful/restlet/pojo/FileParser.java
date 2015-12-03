@@ -25,6 +25,10 @@ public class FileParser {
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
 
+            if(!Scientists.getScientistList().isEmpty()){
+                return;
+            }
+            
             while((line = br.readLine()) != null){
                 String[] fields = line.split(",");
                 Scientist.Discipline d = Scientist.Discipline.MATH; // default

@@ -15,16 +15,24 @@ public class Scientists {
     *  Infact all methods must be static, just so there is no lock-mixup in
     *  the concurrent access.
     */
-    private final static List<Scientist> scientistList = 
-            new CopyOnWriteArrayList<>();
-    private static AtomicInteger id = new AtomicInteger();
+    
+    private final static List<Scientist> scientistList;
+    private static AtomicInteger id;
+    
+    static{
+        id = new AtomicInteger();
+        scientistList = new CopyOnWriteArrayList<Scientist>();
+        if(getScientistList().isEmpty()){
+            scientistList.clear();
+            new FileParser().parse();
+        }
+    }
     
     public static List<Scientist> getScientistList(){
         return Scientists.scientistList;
     }
-    
-    @Override
-    public String toString(){
+
+    public static String toPlain(){
         String result = "";
         for(Scientist s : scientistList){
             result += s.toString() + System.lineSeparator();

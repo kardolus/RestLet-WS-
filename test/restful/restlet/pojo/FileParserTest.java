@@ -35,7 +35,6 @@ public class FileParserTest {
     @Before
     public void setUp() {
         instance = new FileParser();
-        sc = new Scientists();
     }
     
     @After
@@ -54,7 +53,7 @@ public class FileParserTest {
         }
         // all lines should be parsed
         assertEquals(countLines(), Scientists.getScientistList().size()); 
-        System.out.println(sc.toString());
+        System.out.println(Scientists.toPlain());
     }
     
     private int countLines() {

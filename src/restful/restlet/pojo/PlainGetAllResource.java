@@ -12,6 +12,6 @@ import org.restlet.resource.ServerResource;
 public class PlainGetAllResource extends ServerResource { // need to extend ServerResource in order to attach
     @Get
     public Representation toPlain(){
-        return new StringRepresentation(new Scientists().toString(), MediaType.TEXT_PLAIN);
+        return new StringRepresentation(Scientists.toPlain(), MediaType.TEXT_PLAIN);
     }
 }

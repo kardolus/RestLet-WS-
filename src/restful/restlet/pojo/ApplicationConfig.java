@@ -9,13 +9,13 @@ import org.restlet.routing.Router;
  * This class includes the Restlet routing table
  */
 public class ApplicationConfig extends Application{
-
+    
     @Override
     public synchronized Restlet createInboundRoot() {
         // Create the Routing Table
         Router router = new Router(getContext());
-        router.attach("/plain", PlainGetAllResource.class);
-        //router.attach("/xml", XmlGetResource.class);
+        router.attach("/xml", XmlGetAllResource.class);
+        router.attach("/plain", PlainGetAllResource.class);  
         //router.attach("/json", JsonGetResource.class);
         return router;
     }
